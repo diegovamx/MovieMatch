@@ -23,7 +23,7 @@ onValue(moviesRef, (snapshot) => {
         const existingMovies = Object.values(snapshotValues)
         renderWatchlist(existingMovies)
     } else {
-        watchlistContainer.innerHTML = "<h2 id='empty-text'>No movies added yet.</h2>"
+        watchlistContainer.innerHTML = "<h2 id='empty-text'>No movies added yet. 😞</h2>"
     }
 }
 )
@@ -70,7 +70,7 @@ moviesList.addEventListener('click', (e) => {
             poster_path: moviePosterPath
         }
         const newMovieRef = push(moviesRef, movieData)
-        
+
         onValue(moviesRef, (snapshot) => { 
             const snapshotDoesExist = snapshot.exists()
             if (snapshotDoesExist) {
